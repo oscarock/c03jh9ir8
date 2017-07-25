@@ -8,7 +8,7 @@ class ActorsController < ApplicationController
 
     def create
     # puts params[:name]
-      actor = Actor.create(name: params[:name])
+      actor = Actor.create(name: params[:name],bio: params[:bio],birth_date: params[:birth_date],birth_place: params[:birth_place],image_url: params[:image_url])
       redirect_to '/actors'
     end
 end
