@@ -1,0 +1,15 @@
+<h2>Crear actor Nuevo</h2>
+<form action="/actors" method="post">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type="text" name="name" placeholder="Nombre"><br>
+    <br>
+    <textarea name="bio" placeholder="Biografia"></textarea><br>
+    <br>
+    <input type="date" name="birth_date" placeholder="Fecha de nacimiento"><br>
+    <br>
+    <input type="text" name="birth_place" placeholder="Lugar de nacimiento"><br>
+    <br>
+    <textarea name="image_url" placeholder="Url Imagen"></textarea><br>
+    <br>
+    <input type="submit" value="enviar">
+</form>
