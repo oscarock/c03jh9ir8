@@ -4,11 +4,21 @@ class ActorsController < ApplicationController
     end
 
     def new
+      @actor = Actor.new
     end
 
     def create
-    # puts params[:name]
-      actor = Actor.create(name: params[:name],bio: params[:bio],birth_date: params[:birth_date],birth_place: params[:birth_place],image_url: params[:image_url])
-      redirect_to '/actors'
+      actor = Actor.new(actor_params)
+      if actor.save
+          redirect_to '/actors'
+      else
+        render :new
+      end
     end
+
+    private
+
+      def actor_params
+        params.require(:actor).permit(:name, :bio, :birth_date, :birth_place, :image_url)
+      end
 end
